@@ -4,18 +4,18 @@ import React from 'react';
 export default function CurrentMovie(props) {
   return (
       <div className="left-current-side">
-        {/*{console.log(props)}*/}
+        {console.log(props)}
         <div className="current-movie">
-          <h1 className="title">title</h1>
+          <h1 className="title">{props.title}</h1>
           <img
             className="thumbnail"
-            src='imaa'
+            src={props.image}
           />
-          <p>rating : rating</p>
-          <p>runtime : runtimemin</p>
+          <p>rating : {props.rating}</p>
+          <p>runtime : {props.runtime}min</p>
           <p>description</p>
           <p className="description">
-            desc
+            {props.desc}
           </p>
         </div>
       </div>

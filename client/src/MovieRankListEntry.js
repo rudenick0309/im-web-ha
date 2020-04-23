@@ -3,7 +3,7 @@ import MovieRankListEntryGenres from "./MovieRankListEntryGenres";
 
 export default function MovieRankListEntry(props) {
   return (
-    <div className="card" onClick={()=> props.handleCurrentMovie(props)}>
+    <div className="card" onClick={()=> props.handleCardClick(props)}>
         {/*{console.log(props.handleCurrentMovie)}*/}
         <div style={{ flex: 3 }}>
             <img

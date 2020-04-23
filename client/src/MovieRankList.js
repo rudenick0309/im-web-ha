@@ -3,9 +3,9 @@ import MovieRankListEntry from './MovieRankListEntry';
 
 
 export default function MovieRankList(props) {
-  const {movies, handleCurrentMovie} = props;
+  const {movies, handleCardClick} = props;
   {console.log(movies)}
-  {console.log('프랍',handleCurrentMovie)}
+  {console.log('프랍',handleCardClick)}
   return (
     <div className="right-movie-list">
       {movies.map( movie => {
@@ -18,7 +18,7 @@ export default function MovieRankList(props) {
               rating={movie.rating}
               runtime={movie.runtime}
               genres={movie.genres}
-              handleCurrentMovie={handleCurrentMovie}
+              handleCardClick={handleCardClick}
           />
         )
 
