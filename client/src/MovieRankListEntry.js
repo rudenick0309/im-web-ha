@@ -1,32 +1,26 @@
 import React from 'react';
-import MovieRankListEntryGenres from "./MovieRankListEntryGenres";
 
-export default function MovieRankListEntry(props) {
+
+export default function MovieRankListEntry({handleCardClick,movie,movie:{runtime, rating, title, medium_cover_image, genres}}) {
   return (
-    <div className="card" onClick={()=> props.handleCardClick(props)}>
-        {/*{console.log(props.handleCurrentMovie)}*/}
+    <div className="card" onClick={()=> handleCardClick(movie)}>
         <div style={{ flex: 3 }}>
             <img
               width="100%"
               height="100%"
-              src={props.image}
+              src={medium_cover_image}
             ></img>
         </div>
 
         <div style={{ flex: 7 }}>
-            <h3 className="title">{props.tilte}</h3>
-            <p className="rating">rating: {props.rating}</p>
-            <p className="running-time">running time : {props.runtime} min</p>
+            <h3 className="title">{title}</h3>
+            <p className="rating">rating: {rating}</p>
+            <p className="running-time">running time : {runtime} min</p>
             <p>genres</p>
-                {/*{console.log('장르 확인', {props.genres})}*/}
             <div className="tag-list">
-                {/*{props.genres.map( genre => console.log(genre))*/}
-
-                    <div className="tag">{props.genres}</div>
-                    {/*<div className="tag">Drama</div>*/}
-                    {/*<div className="tag">Fantasy</div>*/}
-                    {/*<div className="tag">Sci-Fi</div>*/}
-
+                {genres.map( genre => (
+                    <div className="tag">{genre}</div>
+                ))}
             </div>
         </div>
     </div>
